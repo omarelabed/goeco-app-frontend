@@ -25,7 +25,7 @@ navigation-bar button {
 
 navigation-bar back-indicator {
   background-image: url(default_back_icon.png);
-  background-size: 18;
+  background-size: 40;
 }
 
 navigation-bar back-button {
