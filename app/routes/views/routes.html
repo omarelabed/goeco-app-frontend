@@ -1,26 +1,34 @@
-<super-navbar>
-  <super-navbar-title>
-    Routes view
-  </super-navbar-title>
-</super-navbar>
+  <super-navbar>
+    <super-navbar-title>
+      Routes view
+    </super-navbar-title>
+  </super-navbar>
 
-<div ng-controller="RoutesController">
+  <div ng-controller="RoutesController">
 
-  <div ng-repeat="route in routes" class="list">
+    <div ng-repeat="route in routes" class="list">
 
-  <div class="item item-icon-right" >
-      {{route.reason}}
-      <i class="icon icon-accessory super-arrow-right-c"></i>
+    <div class="item" >
+        <h2><b>{{route.reason}}</b></h2>
+    </div>
+
+          <div ng-repeat="activity in route.activities" class="list">
+
+              <div class="item item-icon-right" >
+                  {{activity.activityName}}
+                  <i class="icon icon-accessory super-arrow-right-c"></i>
+              </div>
+
+          </div>
+
+    </div>
+
+    <super-navigate-back>
+      <button class="button button-positive button-block navigation__layerPush__button">
+        Navigate back!
+      </button>
+    </super-navigate-back>
+
+    <br><br>
+
   </div>
-
-  </div>
-
-  <super-navigate-back>
-    <button class="button button-positive button-block navigation__layerPush__button">
-      Navigate back!
-    </button>
-  </super-navigate-back>
-
-  <br><br>
-
-</div>
