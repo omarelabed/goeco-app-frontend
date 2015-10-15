@@ -1,7 +1,7 @@
-GoEco! FrontEnd
+GoEco! Front End
 ======================
 
-This is the front end application for the mobile project [GoEco!](http://http://goeco-project.ch/).
+This is the front end application for the mobile project [GoEco!](http://www.goeco-project.ch/).
 
 ## Installation
 Install the Steroids² Tooling: http://www.appgyver.com/steroids/getting_started
