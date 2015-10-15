@@ -3,28 +3,44 @@
 module.exports =
 
   # See styling options for tabs and other native components in app/common/native-styles/ios.css or app/common/native-styles/android.css
-  tabs: [
-    {
-      title: "Index"
-      id: "weeks"
-      location: "weeks#weeks" # Supersonic module#view type navigation
-    }
-    {
-      title: "Settings"
-      id: "settings"
-      location: "kitchensink#settings"
-    }
-    {
-      title: "Internet"
-      id: "internet"
-      location: "http://google.com" # URLs are supported!
-    }
-  ]
+  # tabs: [
+  #   {
+  #     title: "Menu"
+  #     id: "menu"
+  #     location: "menu#menu" # Supersonic module#view type navigation
+  #   }
+  #   {
+  #     title: "Settings"
+  #     id: "settings"
+  #     location: "settings#settings"
+  #   }
+    # {
+    #   title: "Internet"
+    #   id: "internet"
+    #   location: "http://google.com" # URLs are supported!
+    # }
+  # ]
 
-  # rootView:
-  #   location: "weeks#weeks"
+  rootView:
+    id: "menu"
+    location: "menu#menu"
 
   preloads: [
+
+    {
+      id: "menu"
+      location: "menu#menu"
+    }
+
+    {
+      id: "settings"
+      location: "settings#settings"
+    }
+
+    {
+      id: "weeks"
+      location: "weeks#weeks"
+    }
 
     {
       id: "days"
@@ -87,5 +103,5 @@ module.exports =
       animation: "swingingDoor"
 
   # initialView:
-  #   id: "weeks"
-  #   location: "weeks#weeks"
+    # id: "menu"
+    # location: "menu#menu"

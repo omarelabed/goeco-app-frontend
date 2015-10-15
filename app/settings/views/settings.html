@@ -1,0 +1,31 @@
+<super-navbar>
+  <super-navbar-title>
+    Settings
+  </super-navbar-title>
+</super-navbar>
+
+<div ng-controller="SettingsController">
+
+<div ng-model="settings">
+          <div class="list">
+              <div class="item item-divider">
+                <h2><b>Settings info</b></h2>
+              </div>
+              <div class="item">
+                  {{settings.url}}
+              </div>
+              <div class="item" >
+                  Has notif.? {{settings.notifications}}
+              </div>
+              <div class="item" >
+                  Has a car? {{settings.car_owner}}
+              </div>
+          </div>
+</div>
+
+  <super-navigate-back>
+    <button class="button button-positive button-block navigation__layerPush__button">
+      Navigate back
+    </button>
+  </super-navigate-back>
+</div>

@@ -1,11 +1,11 @@
 angular
   .module('routes')
-  .controller 'RoutesController',['$scope', 'supersonic',  ($scope, supersonic) ->
+  .controller 'RoutesController',['$scope', 'supersonic', 'Day', ($scope, supersonic, Day) ->
     $scope.supersonic = supersonic
     console.log('RoutesController');
     supersonic.data.channel('routes_channel').subscribe (message) ->
-        console.log(message.content);
+        day = new Day(message.content);
         $scope.$apply ->
-            $scope.routes = message.content
+            $scope.routes = day.getRoutes()
             return
           ]

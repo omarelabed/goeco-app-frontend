@@ -1,18 +1,19 @@
 angular
   .module('days')
-  .controller 'DaysController', ['$scope', 'supersonic' ,($scope, supersonic) ->
+  .controller 'DaysController', ['$scope', 'supersonic' , 'Week', ($scope, supersonic, Week) ->
     $scope.supersonic = supersonic
     console.log('DaysController');
     supersonic.data.channel('days_channel').subscribe (message) ->
-        console.log(message.content);
+        week = new Week(message.content)
         $scope.$apply ->
-            $scope.days = message.content
+            $scope.days = week.getDays()
             return
 
     $scope.showDay = (day) ->
       console.log('Change to routes view');
+      console.log(day)
       message =
-        content: day.routes
+        content: day
         sender: "..."
       supersonic.data.channel('routes_channel').publish(message)
       view = new supersonic.ui.View
