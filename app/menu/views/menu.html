@@ -7,36 +7,31 @@
 <div ng-model="user">
           <div class="list">
               <div class="item item-divider">
-                <h2><b>User info</b></h2>
+                <h2><b>{{'USERNAME' | translate}}</b></h2>
               </div>
               <div class="item">
-                  {{user.id}}
-              </div>
-              <div class="item item-icon-left" >
-                <i class="icon super-person-stalker"></i>
                   {{user.username}}
-              </div>
-              <div class="item item-icon-left" >
-                <i class="icon super-email"></i>
-                  {{user.email}}
-              </div>
-              <div class="item" >
-                  {{user.first_name}}
-              </div>
-              <div class="item" >
-                  {{user.last_name}}
-              </div>
-              <div class="item" >
-                  {{user.url}}
               </div>
           </div>
 </div>
+
 <button class="button button-block button-positive" ng-click="showWeeks()">
-  Weeks
+  Routes
 </button>
+
 <button class="button button-block button-positive" ng-click="showSettings()">
   Settings
 </button>
+
+<button class="button button-block button-royal button-icon-left" ng-click="switchLanguage('en')">
+<i class"icon ion-chatbubble-working"></i>
+  {{'SWITCH_LANGUAGE_EN' | translate}}
+</button>
+
+<button class="button button-block button-royal" ng-click="switchLanguage('it')">
+  {{'SWITCH_LANGUAGE_IT' | translate}}
+</button>
+
   <super-navigate-back>
     <button class="button button-positive button-block navigation__layerPush__button">
       Navigate back

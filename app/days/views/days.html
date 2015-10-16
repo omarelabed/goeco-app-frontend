@@ -1,17 +1,23 @@
 <super-navbar>
   <super-navbar-title>
-    Days view
+    Week X
   </super-navbar-title>
 </super-navbar>
 
 <div ng-controller="DaysController">
 
-  <div ng-repeat="day in days" class="list" ng-click="showDay(day)">
+  <div ng-repeat="day in days" class="list">
+  <!-- <div ng-repeat="day in days" class="list" ng-click="showDay(day)"> -->
+    <div class="item" >
+        <h2><b>{{day.name}}</b></h2>
+    </div>
 
-  <div class="item item-icon-right" >
-      {{day.name}}
-      <i class="icon icon-accessory super-arrow-right-c"></i>
-  </div>
+    <div ng-repeat="route in day.routes" class="list" ng-click="showDay(route)">
+      <div class="item item-icon-right" >
+          {{route.reason}}
+          <i class="icon icon-accessory super-arrow-right-c"></i>
+      </div>
+    </div>
 
   </div>
 

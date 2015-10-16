@@ -1,6 +1,8 @@
+# Week controller that list all the weeks
+# TODO: implement method to get the consumption inside the Week(User?) model 
 angular
 .module('weeks')
-.controller 'WeeksController', ['$scope', 'supersonic', '$http', 'User', 'UserSettings', 'Account', ($scope, supersonic, $http, User, UserSettings, Account) ->
+.controller 'WeeksController', ['$scope', 'supersonic', '$translate', '$http', 'User', 'UserSettings', 'Account', ($scope, supersonic, $translate, $http, User, UserSettings, Account) ->
     $scope.supersonic = supersonic
     console.log('WeeksController');
     supersonic.data.channel('weeks_channel').subscribe (message) ->

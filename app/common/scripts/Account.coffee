@@ -2,7 +2,7 @@ angular.module('common')
 .factory 'Account', ['$http', ($http) ->
     class Account
         constructor: (params) ->
-            {@url, @user, @week_set, @id, @user_settings} = params            
+            {@id, @url, @user, @week_set , @user_settings} = params            
         save: ->
         getUrl: ->
             @url
@@ -15,5 +15,5 @@ angular.module('common')
         getUserSettings: ->
             @user_settings
         print: ->
-            [@url, @user, @week_set, @id, @user_settings]
+            [@id, @url, @user, @week_set, @user_settings]
 ]

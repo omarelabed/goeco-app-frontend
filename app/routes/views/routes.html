@@ -1,27 +1,41 @@
   <super-navbar>
     <super-navbar-title>
-      Routes view
+      Single route
     </super-navbar-title>
   </super-navbar>
 
   <div ng-controller="RoutesController">
+  <div class="list">
 
-    <div ng-repeat="route in routes" class="list">
+    <label class="item item-input item-select">
+      <div class="input-label">
+        Reason:
+      </div>
+      <select>
+        <option>Travel</option>
+        <option selected>Other</option>
+        <option>Working</option>
+      </select>
+    </label>
 
-    <div class="item" >
-        <h2><b>{{route.reason}}</b></h2>
-    </div>
+  </div>
 
-          <div ng-repeat="activity in route.activities" class="list">
+  <div class="item">
+  <b>CO2: {{route.co2}}; Energy: {{route.energy}}</b>
+  </div>
+
+    <div ng-repeat="activity in route.activities" class="list" ng-click="showMap(route)">
 
               <div class="item item-icon-right" >
-                  {{activity.activityName}}
+                  Activity name: {{activity.activityMoves}}
                   <i class="icon icon-accessory super-arrow-right-c"></i>
               </div>
 
-          </div>
-
     </div>
+
+    <button class="button button-positive button-block" ng-click="validate()">
+        Validate
+    </button>
 
     <super-navigate-back>
       <button class="button button-positive button-block navigation__layerPush__button">

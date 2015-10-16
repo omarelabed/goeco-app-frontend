@@ -1,14 +1,16 @@
-<div ng-controller="GeolocationController">
+<div ng-controller="GeolocationController" ng-model="activity">
 
   <super-navbar>
     <super-navbar-title>
       geolocation
     </super-navbar-title>
   </super-navbar>
-
+  <div class="item" >
+      {{activity.duration}}
+  </div>
   <kitchensink-google-maps position="position"></kitchensink-google-maps>
 
-  <div class="padding">
+ <!--  <div class="padding">
     <div class="loading-message" ng-show="isWatchingPosition || isGettingPosition">
       <img src="/icons/loading.svg" height="26" alt=""> {{isWatchingPosition? "Continuously watching position..." : "Getting position..."}}
     </div>
@@ -59,6 +61,6 @@
       {{isWatchingPosition ? "Stop watching position" : "Watch for changes in position"}}
     </button>
 
-  </div>
+  </div> -->
 
 </div>

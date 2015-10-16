@@ -22,10 +22,15 @@ module.exports =
   # ]
 
   rootView:
-    id: "menu"
-    location: "menu#menu"
+    id: "login"
+    location: "login#login"
 
   preloads: [
+
+    {
+      id: "login"
+      location: "login#login"
+    }
 
     {
       id: "menu"
@@ -50,6 +55,16 @@ module.exports =
     {
       id: "routes"
       location: "routes#routes"
+    }
+
+    {
+      id: "geolocation"
+      location: "sensors#geolocation"
+    }
+
+    {
+      id: "activity"
+      location: "activity#activity"
     }
     # Navigation & transitions
 
@@ -103,5 +118,5 @@ module.exports =
       animation: "swingingDoor"
 
   # initialView:
-    # id: "menu"
-    # location: "menu#menu"
+  #   id: "login"
+  #   location: "login#login"

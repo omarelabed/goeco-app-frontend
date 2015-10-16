@@ -82,11 +82,17 @@
 /*********************************
  * Sensors / Geolocation
  ********************************/
+.angular-google-map-container {   
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+  background-color: #f4f4f4;
+}
 
 .google-maps-container {
   position: relative;
   width: 100%;
-  padding-bottom: 50%;
+  padding-bottom: 100%;
   background-color: #f4f4f4;
 }
 
@@ -105,6 +111,16 @@
 
 .geolocation-table tr td:last-child {
   padding-left: 10px;
+}
+
+/*Remove google logo*/
+a[href^="http://maps.google.com/maps"]{display:none !important}
+a[href^="https://maps.google.com/maps"]{display:none !important}
+.gmnoprint a, .gmnoprint span, .gm-style-cc {
+    display:none;
+}
+.gmnoprint div {
+    background:none !important;
 }
 
 /*********************************

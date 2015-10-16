@@ -9,11 +9,11 @@ angular
             $scope.days = week.getDays()
             return
 
-    $scope.showDay = (day) ->
-      console.log('Change to routes view');
-      console.log(day)
+    $scope.showDay = (route) ->
+      console.log('Change to route view');
+      console.log(route)
       message =
-        content: day
+        content: route
         sender: "..."
       supersonic.data.channel('routes_channel').publish(message)
       view = new supersonic.ui.View
