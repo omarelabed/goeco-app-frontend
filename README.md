@@ -8,6 +8,10 @@ Install the Steroids² Tooling: http://www.appgyver.com/steroids/getting_started
 
 Run `$ steroids update` in the main folder.
 
+Run `$ bower install` to install the bower dependencies
+
+Run `$ npm install` to install the node dependencies
+
 ## Running
 Run `$ steroids connect` to start the Steroids Development server, then scan the QR code with the AppGyver Scanner app.
 

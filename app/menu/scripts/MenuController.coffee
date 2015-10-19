@@ -1,10 +1,13 @@
 angular
 .module('menu')
-.controller 'MenuController', ['$scope', 'supersonic', '$http', 'User', 'UserSettings', 'Account', '$translate', ($scope, supersonic, $http, User, UserSettings, Account, $translate) ->
+.controller 'MenuController', ['$scope', 'supersonic', '$http', 'User', 'UserSettings', 'Account', '$translate', '$cookieStore', ($scope, supersonic, $http, User, UserSettings, Account, $translate, $cookieStore) ->
     $scope.supersonic = supersonic
     console.log('MenuController');
+
+    #Gettting the params from the login and setting the cookie as logged in
     supersonic.data.channel('login_channel').subscribe (message) ->
         console.log message.content
+        $cookieStore.put("login","true")
 
     account = []
     user = []
@@ -53,4 +56,7 @@ angular
     
     $scope.switchLanguage = (lang) ->
         $translate.use lang
+
+    $scope.logOut = () ->
+        $cookieStore.remove "login"
 ]
