@@ -11,6 +11,8 @@
     "lodash": "~3.10.1",
     "webcomponentsjs": "~0.7.15",
     "steroids-js": "~3.5.16",
-    "angular-cookies": "~1.4.7"
+    "angular-cookies": "~1.4.7",
+    "moment": "~2.10.6",
+    "angular-moment": "~0.10.3"
   }
 }

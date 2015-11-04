@@ -1,6 +1,6 @@
 angular
 .module('routes')
-.controller 'RoutesController',['$scope', 'supersonic', 'Route', ($scope, supersonic, Route) ->
+.controller 'RoutesController',['$http', '$scope', 'supersonic', 'Route', ($http, $scope, supersonic, Route) ->
     $scope.supersonic = supersonic
     console.log('RoutesController');
     supersonic.data.channel('routes_channel').subscribe (message) ->
@@ -22,8 +22,10 @@ angular
 
     # TODO: implement validation, prevent null field in reason 
     $scope.validate = () ->
-        view = new supersonic.ui.View
-            location: "sensors#geolocation"
-            id: "geolocation"
-        supersonic.ui.layers.push view
+        $scope.route.validate().then (response) ->
+            console.log response
+        # view = new supersonic.ui.View
+        #     location: "sensors#geolocation"
+        #     id: "geolocation"
+        # supersonic.ui.layers.push view
 ]

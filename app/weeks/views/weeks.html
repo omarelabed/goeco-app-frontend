@@ -8,9 +8,10 @@
 
   <div ng-repeat="week in weeks" class="list" ng-click="showWeek(week)">
 
-  <div class="item item-icon-right" >
+  <div class="item item-icon-left item-icon-right" >
+      <i ng-class="{icon icon-accessory ion-ios-circle-outline}"></i>
+      {{week.name}} 
       <i class="icon icon-accessory super-arrow-right-c"></i>
-      {{week.name}}
   </div>
 
   </div>

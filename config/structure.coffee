@@ -33,6 +33,11 @@ module.exports =
     }
 
     {
+      id: "registration"
+      location: "registration#registration"
+    }
+
+    {
       id: "menu"
       location: "menu#menu"
     }

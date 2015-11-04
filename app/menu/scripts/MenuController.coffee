@@ -7,7 +7,6 @@ angular
     #Gettting the params from the login and setting the cookie as logged in
     supersonic.data.channel('login_channel').subscribe (message) ->
         console.log message.content
-        $cookieStore.put("login","true")
 
     account = []
     user = []
@@ -20,6 +19,18 @@ angular
     #     week_set: "week set"
     #     user_settings: "user sett"
 
+    
+
+    # $http.get('http://10.0.3.2:8000/').success((data, status, headers, config) ->
+    #     console.log 'success'
+    #     return
+    # ).error (data, status, headers, config) ->
+    #     console.log data
+    #     console.log status
+    #     console.log headers
+    #     console.log config
+    #     return
+
     $http.get('https://dl.dropboxusercontent.com/u/16052944/user.json').then (result) ->
         console.log result.data
         account = new Account(result.data)
@@ -31,6 +42,8 @@ angular
         console.log 'UserSettings:'
         console.log userSettings
         console.log account.getWeeks()
+
+    
 
     $scope.showWeeks = () ->
         console.log('Change to weeks view');

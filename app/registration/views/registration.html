@@ -1,0 +1,41 @@
+  <super-navbar>
+    <super-navbar-title>
+      Registration
+    </super-navbar-title>
+  </super-navbar>
+<div class="padding">
+  <div ng-model="message" ng-controller="RegistrationController">
+
+<div class="list list-inset">
+  <label class="item item-input">
+    <!-- <span class="input-label">Username</span> -->
+    <input ng-model="user.fist_name" type="text" placeholder="First name">
+  </label>
+  <label class="item item-input">
+    <!-- <span class="input-label">Username</span> -->
+  <input ng-model="user.last_name" type="text" placeholder="Last name">
+  </label>
+  <label class="item item-input">
+    <!-- <span class="input-label">Username</span> -->
+  <input ng-model="user.email" type="email" placeholder="Email">
+  </label>
+  <label class="item item-input">
+    <!-- <span class="input-label">Username</span> -->
+    <input ng-model="user.username" type="text" placeholder="Username">
+  </label>
+  <label class="item item-input">
+    <!-- <span class="input-label">Password</span> -->
+    <input ng-model="user.password" type="password" placeholder="Password">
+  </label>
+  <label class="item item-input">
+    <!-- <span class="input-label">Verify password</span> -->
+    <input ng-model="confirmPassword" type="password" placeholder="Verify password">
+  </label>
+</div>
+  <button class="button button-positive button-block" ng-model="isDisabled" ng-disabled="isDisabled.type" ng-click="submit()">
+        Submit
+  </button>
+  <div>{{message.name}}</div>
+
+  </div>
+</div>

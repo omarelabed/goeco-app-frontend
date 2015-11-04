@@ -1,22 +1,31 @@
-  <super-navbar>
+<super-navbar>
     <super-navbar-title>
-      Login
+      Authentication
     </super-navbar-title>
-  </super-navbar>
+</super-navbar>
+<div class="padding">
+<div ng-model="message" ng-controller="LoginController">
 
-  <div ng-controller="LoginController">
+    <button class="button button-positive button-block" ng-click="register()">
+        Register
+    </button>
 
-<div class="list">
-  <label class="item item-input">
-    <span class="input-label">Username</span>
-    <input ng-model="username" type="text">
-  </label>
-  <label class="item item-input">
-    <span class="input-label">Password</span>
-    <input ng-model="password" type="password">
-  </label>
+    <button class="button button-positive button-block" ng-click="login()">
+        Login
+    </button>
+
+    <div ng-model="loginState" ng-hide="loginState.state" class="list list-inset">
+        <label class="item item-input">
+            <input ng-model="user.username" type="text" placeholder="Username">
+        </label>
+        <label class="item item-input">
+            <input ng-model="user.password" type="password" placeholder="Password">
+        </label>
+        <button class="button button-positive button-block" ng-click="submit()">
+            Submit
+        </button>
+        <div>{{log.message}}</div>
+    </div>
+
 </div>
-<button class="button button-positive button-block" ng-click="submit(username, password)">
-        Submit
-      </button>
-  </div>
+</div>

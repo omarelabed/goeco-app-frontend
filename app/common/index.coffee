@@ -2,7 +2,9 @@ angular.module 'common', [
   # Declare here all AngularJS dependencies that are shared by all modules.
   'supersonic',
   'pascalprecht.translate',
-  'uiGmapgoogle-maps'
+  'uiGmapgoogle-maps',
+  'ngCookies',
+  'angularMoment'
 ]
 
 angular

@@ -3,28 +3,66 @@ angular
 .controller 'LoginController', ['$scope', 'supersonic', '$http', 'User', 'UserSettings', 'Account', '$translate', '$cookieStore', ($scope, supersonic, $http, User, UserSettings, Account, $translate, $cookieStore) ->
     $scope.supersonic = supersonic
     console.log('LoginController');
-    
-    # Check if it is already logged in by controlling the cookie, if it is skip to the menu view
-    if $cookieStore.get "login"
-            console.log $cookieStore.get "login" 
-        else
-            view = new supersonic.ui.View
-            location: "menu#menu"
-            id: "menu"
 
-    #Send the user params to the main view    
-    $scope.submit = (username, password) ->
-        console.log(username);
-        console.log(password);
-        message =
-            content:
-                username: this.username
-                password: this.password
-            sender: "..."
-        #Channel used to share data between the login and the menu view
-        supersonic.data.channel('login_channel').publish(message)
+    user=
+        password:""
+        username:""
+    
+    log=
+        message:""
+    
+    loginState = 
+        state: true
+
+    $scope.loginState=loginState
+    $scope.log=log
+    $scope.user=user
+  
+    $scope.submit = () ->
+        console.log $scope.user
+        #TODO: send user params to LCV server and retrieve the token
+        #TODO: manage errors in case the user doesnt exists
+        if false 
+            $scope.log.message = "Authentication error"
+            $scope.user=
+                password:""
+                username:""
+        else
+            $cookieStore.put('auth','thisisthetoken')
+            message =
+                content:
+                    # username: $scope.user.username
+                    # password: $scope.user.password
+                    token: 'thisisthetoken'
+                sender: "..."
+            supersonic.data.channel('login_channel').publish(message)
+            view = new supersonic.ui.View
+                location: "menu#menu"
+                id: "menu"
+            supersonic.ui.layers.push view
+
+    $scope.register = () ->
+        console.log "calling registration view"
         view = new supersonic.ui.View
-            location: "menu#menu"
-            id: "menu"
+            location: "registration#registration"
+            id: "registration"
         supersonic.ui.layers.push view
+
+    $scope.login = () ->
+        if $cookieStore.get "auth"
+            console.log $cookieStore.get "auth"
+            message =
+                content:
+                    token: 'thisisthetoken'
+                sender: "..."
+            supersonic.data.channel('login_channel').publish(message)
+            view = new supersonic.ui.View
+                location: "menu#menu"
+                id: "menu"
+            supersonic.ui.layers.push view
+        else
+            console.log "Login required"
+            $scope.loginState.state=false
+            return
+        return
 ]
